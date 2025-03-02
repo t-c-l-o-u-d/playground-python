@@ -12,7 +12,7 @@ RUN useradd --create-home --groups wheel ${USER}
 # repository specific commands start here
 # =======================================
 
-# install rust toolchain
+# install python toolchain
 RUN pacman --sync --noconfirm \
 	autopep8 \
 	flake8 \
