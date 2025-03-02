@@ -1,0 +1,64 @@
+# GNU Affero General Public License v3.0 or later (see COPYING or https://www.gnu.org/licenses/agpl.txt)
+
+FROM ghcr.io/t-c-l-o-u-d/config-devcontainer/arch-linux-devcontainer-base:latest
+
+# pull in USER from devcontainer.json
+ARG USER
+
+# add the USER to the image
+RUN useradd --create-home --groups wheel ${USER}
+
+# =======================================
+# repository specific commands start here
+# =======================================
+
+# add bash files
+#COPY playground-python-devcontainer /etc/skel/.config/bash/playground-rust-devcontainer
+
+# install rust toolchain
+RUN pacman --sync --noconfirm \
+	autopep8 \
+	flake8 \
+	mpdecimal \
+	mypy \
+	python \
+	python-astroid \
+	python-autocommand \
+	python-black \
+	python-click \
+	python-colorama \
+	python-dill \
+	python-entrypoints \
+	python-flake8-black \
+	python-flake8-isort \
+	python-importlib-metadata \
+	python-isort \
+	python-jaraco.collections \
+	python-jaraco.context \
+	python-jaraco.functools \
+	python-jaraco.text \
+	python-mccabe \
+	python-more-itertools \
+	python-mypy_extensions \
+	python-orjson \
+	python-packaging \
+	python-pathspec \
+	python-platformdirs \
+	python-pycodestyle \
+	python-pyflakes \
+	python-pylint \
+	python-setuptools \
+	python-tomli \
+	python-tomlkit \
+	python-typing_extensions \
+	python-wheel \
+	python-zipp \
+	ruff \
+	yapf
+
+# =====================================
+# repository specific commands end here
+# =====================================
+
+# ensure the image starts as USER
+USER ${USER}
