@@ -12,9 +12,6 @@ RUN useradd --create-home --groups wheel ${USER}
 # repository specific commands start here
 # =======================================
 
-# add bash files
-#COPY playground-python-devcontainer /etc/skel/.config/bash/playground-rust-devcontainer
-
 # install rust toolchain
 RUN pacman --sync --noconfirm \
 	autopep8 \
