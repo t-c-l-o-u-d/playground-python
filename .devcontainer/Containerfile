@@ -6,7 +6,7 @@ FROM ghcr.io/t-c-l-o-u-d/devcontainer-base-images/arch-linux-devcontainer:latest
 ARG USER
 
 # add the USER to the image
-RUN useradd --create-home --shell /usr/bin/bash --groups wheel ${USER}
+RUN useradd --create-home --shell /usr/sbin/bash --groups wheel ${USER}
 
 # =======================================
 # repository specific commands start here
