@@ -13,7 +13,7 @@ RUN useradd --create-home --shell /usr/sbin/bash --groups wheel ${USER}
 # =======================================
 
 # install python toolchain
-RUN pacman --sync --noconfirm \
+RUN pacman --sync --refresh --noconfirm \
 	autopep8 \
 	flake8 \
 	mpdecimal \
@@ -57,5 +57,5 @@ RUN pacman --sync --noconfirm \
 # repository specific commands end here
 # =====================================
 
-# ensure the image starts as USER
+# ensure the container starts as USER
 USER ${USER}
