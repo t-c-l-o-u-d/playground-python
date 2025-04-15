@@ -57,5 +57,5 @@ RUN pacman --sync --refresh --noconfirm \
 # repository specific commands end here
 # =====================================
 
-# ensure the image starts as USER
+# ensure the container starts as USER
 USER ${USER}
