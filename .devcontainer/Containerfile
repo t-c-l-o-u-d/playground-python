@@ -13,7 +13,7 @@ RUN useradd --create-home --shell /usr/sbin/bash --groups wheel ${USER}
 # =======================================
 
 # install python toolchain
-RUN pacman --sync --noconfirm \
+RUN pacman --sync --refresh --noconfirm \
 	autopep8 \
 	flake8 \
 	mpdecimal \
